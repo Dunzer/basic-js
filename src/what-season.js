@@ -2,20 +2,20 @@ const CustomError = require("../extensions/custom-error");
 
 module.exports = function getSeason(date) {
 	if (!date) {
-		return "Unable to determine the time of year!";
+		return 'Unable to determine the time of year!';
 	};
 	if (date.toDateString() == "Invalid Date") {
-		throw new Error("Put the date");
+		throw new Error('Put the date');
 	}
 
-	month = dates.getMonth();
+	month = date.getMonth();
 	if (month == 11 || month < 2) {
-		return "winter";
+		return 'winter';
 	} else if (month < 5) {
-		return "spring";
+		return 'spring';
 	} else if (month < 8) {
-		return "summer";
+		return 'summer';
 	} else {
-		return "autumn";
+		return 'autumn';
 	}
 };
